@@ -3,6 +3,7 @@
 ## Server Side Rendered CRUD App with Custom User Model built in
 - Styled using Flowbite and Tailwind CSS
 ### How to Use
+- superuser = login: dev pass: dev
 - use template button to create new repository then clone that repository to local dev environment
 - Create VENV (`python -m venv .venv`)
 - Activate VENV (`source .venv/bin/activate`)
@@ -15,3 +16,8 @@
 - [Flowbite](https://flowbite.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Django Custom User Model Best Practices](https://learndjango.com/tutorials/django-custom-user-model)
+
+
+#### Images
+<img src="https://i.imgur.com/6t7wX83.png"/>
+<img src="https://i.imgur.com/LUDrl8o.png"/>
