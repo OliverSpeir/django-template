@@ -1,7 +1,7 @@
 from django.views.generic import CreateView, DeleteView, DetailView, ListView, UpdateView
 from django.urls import reverse_lazy
 from .models import Item
-from .forms import CustomUpdateForm
+from .forms import CustomForm
 
 
 class ItemListView(ListView):
@@ -18,15 +18,14 @@ class ItemDetailView(DetailView):
 class ItemCreateView(CreateView):
     template_name = 'create.html'
     model = Item
-    fields = "__all__"
+    form_class = CustomForm
     success_url = reverse_lazy('list')
 
 
 class ItemUpdateView(UpdateView):
     template_name = 'update.html'
-    # form_class = CustomUpdateForm
+    form_class = CustomForm
     model = Item
-    fields = "__all__"
     success_url = reverse_lazy('list')
 
 

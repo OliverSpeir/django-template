@@ -1,6 +1,6 @@
 # lines 2 - 18 added in template
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm, AuthenticationForm, UsernameField
-
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm, AuthenticationForm
+from django import forms
 from .models import CustomUser
 
 
@@ -12,14 +12,14 @@ class CustomUserCreationForm(UserCreationForm):
                       " focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 "
                       "dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"),
             'placeholder': 'username',
-            'maxlength': '16',
-            'minlength': '6',
+            "required": ''
             })
         self.fields['password1'].widget.attrs.update({
             'class': ("bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500"
                       " focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 "
                       "dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"),
             'placeholder': 'password',
+            "required": '',
             'maxlength': '22',
             'minlength': '8'
             })
@@ -28,20 +28,30 @@ class CustomUserCreationForm(UserCreationForm):
                       "focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 "
                       "dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"),
             'placeholder': 'password',
+            "required": '',
             'maxlength': '22',
             'minlength': '8'
             })
+    email = forms.EmailField(widget=forms.TextInput(attrs={
+        "class":  ("bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 "
+                   "focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 "
+                   "dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"),
+        "type": "email",
+        "placeholder": "email",
+        "required": ""
+    }), required=False)
 
     class Meta:
         model = CustomUser
-        fields = ("username",)
+        fields = ('email', "username")
 
 
 class CustomUserChangeForm(UserChangeForm):
+    email = forms.EmailField(label='email')
 
     class Meta:
         model = CustomUser
-        fields = ("username",)
+        fields = ("email", "username")
 
 
 class UserLoginForm(AuthenticationForm):
@@ -62,5 +72,5 @@ class UserLoginForm(AuthenticationForm):
 
     class Meta:
         model = CustomUser
-        fields = ("username",)
+        fields = ("email", "username")
 

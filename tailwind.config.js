@@ -5,9 +5,14 @@ module.exports = {
       './node_modules/flowbite/**/*.js'
   ],
   theme: {
+    colors: {
+      'red': '#dc2626',
+    },
+
     extend: {},
   },
   plugins: [
-      require('flowbite/plugin')
+      require('flowbite/plugin'),
+      preflight: false
   ],
 }
