@@ -3,7 +3,7 @@
 ## Server Side Rendered CRUD App with Custom User Model built in
 - Styled using Flowbite and Tailwind CSS
 ### How to Use
-- use template button on github
+- use template button to create new repository then clone that repository to local dev environment
 - Create VENV (`python -m venv .venv`)
 - Activate VENV (`source .venv/bin/activate`)
 - `pip install -r requirements.txt`
