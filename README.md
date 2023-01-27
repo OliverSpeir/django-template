@@ -19,5 +19,4 @@
 
 
 #### Images
-<img src="https://i.imgur.com/6t7wX83.png"/>
-<img src="https://i.imgur.com/LUDrl8o.png"/>
+<img src="https://i.imgur.com/yqxE0mA.png"/>
